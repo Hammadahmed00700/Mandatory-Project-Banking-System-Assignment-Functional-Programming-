@@ -28,3 +28,39 @@ def money_withdraw(data):
             data["transaction"].append((f"Withdraw: -{amount:.2f}"))
             print(f"Withdraw:{amount:.2f} Sucessfully.Total Amount:{data['balance']:.2f}")
         return data
+def check_balance(data):
+        print(f"Current Balance:{data['balance']:.2f}")
+        return data
+def trans_statement(data):
+        print(f"""Transaction
+                  {data["transaction"]}
+                   Cuurent Balance:{data["balance"]}"""
+             )
+        return data
+data=create_acc({})
+while True:
+        print("""welcome to bank
+                 1.Create Account
+                 2.Money deposit
+                 3.Money Withdraw
+                 4.Check Balance
+                 5.Transaction
+                 6.Exit""")
+        select=int(input("Press the number"))
+    
+        if select == 1:
+            data =create_acc(data)
+        elif select == 2:
+            data =money_dep(data)
+        elif select == 3:
+            data=money_withdraw(data)
+        elif select == 4:
+            data=check_balance(data)
+        elif select == 5:
+            data=trans_statement(data)
+        elif select==6:
+            break
+        else:
+            print("Invalid!you should select any number form 1 to 6 ")
+    
+print("Thank You! For Using Bank")
