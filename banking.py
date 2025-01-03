@@ -1,3 +1,4 @@
+#author=Hammad ahmed
 import os # for access form the system.
 #step1 created function for  create account for user
 def create_acc(data):
